@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Estacionamiento</title>
+</head>
+<body>
+    <header>
+        <h1>Sistema de Estacionamiento</h1>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Panel de Control</a></li>
+                <li><a href="#control-acceso">Ingreso / Egreso</a></li>
+                <li><a href="#espacios">Espacios y Sectores</a></li>
+                <li><a href="#abonados">Abonados</a></li>
+                <li><a href="#tarifas">Tarifas</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="inicio">
+            <h2>Estado en Tiempo Real</h2>
+            <div>
+                <article>
+                    <h3>Espacios Disponibles</h3>
+                    <p>35 / 50</p>
+                </article>
+                <article>
+                    <h3>Vehículos Actuales</h3>
+                    <p>15</p>
+                </article>
+                <article>
+                    <h3>Alertas del Sistema</h3>
+                    <p>Capacidad normal (30% de ocupación)</p>
+                </article>
+            </div>
+        </section>
+        <section id="control-acceso">
+            <h2>Control de Acceso</h2>
+            <form>
+                <label for="tipo-vehiculo">Tipo de Vehículo:</label>
+                <select id="tipo-vehiculo" name="tipo-vehiculo">
+                    <option value="auto">Auto</option>
+                    <option value="moto">Moto</option>
+                    <option value="camioneta">Camioneta</option>
+                </select>
+                <label for="accion">Acción:</label>
+                <select id="accion" name="accion">
+                    <option value="ingreso">Ingreso</option>
+                    <option value="egreso">Egreso</option>
+                </select>
+                <label for="placa">Placa:</label>
+                <input id="placa" name="placa" type="text" placeholder="AB123CD" />
+
+                <label for="hora-ingreso">Hora de Ingreso:</label>
+                <input id="hora-ingreso" name="hora-ingreso" type="time" />
+
+                <label for="hora-egreso">Hora de Egreso:</label>
+                <input id="hora-egreso" name="hora-egreso" type="time" />
+
+                <div style="margin-top:8px">
+                    <button type="submit">Registrar</button>
+                </div>
+
+                <div>
+                    <h3>Cobro</h3>
+                    <p>Tarifa por hora (ejemplo): Auto $2500 · Moto $1500 · Camioneta $3000</p>
+                    <p>Total estimado: $--</p>
+                </div>
+            </form>
+        </section>
+        
+    </main>
+</body>
+</html>
