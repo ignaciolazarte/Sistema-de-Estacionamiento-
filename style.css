@@ -1,3 +1,4 @@
+
 :root {
     --color-principal: #1f2937;
     --color-secundario: #374151;
@@ -5,88 +6,319 @@
     --color-blanco: #ffffff;
     --color-borde: #d1d5db;
     --color-texto: #111827;
+    --color-acento: #2563eb;
+    --color-exito: #16a34a;
+
     --espaciado: 20px;
+    --radio: 10px;
 }
 * {
     box-sizing: border-box;
 }
-
+html {
+    scroll-behavior: smooth;
+}
 body {
     margin: 0;
+    min-height: 100vh;
     font-family: Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
     background-color: var(--color-fondo);
     color: var(--color-texto);
 }
-
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     margin-top: 0;
 }
-
-main {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 30px 0;
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
 }
-header {
+h3 {
+    font-size: 1.2rem;
+}
+header{
+
+    min-height: 20vh;
+
     background-color: var(--color-principal);
     color: var(--color-blanco);
-    padding: 20px;
+
+    padding: 2rem 5vw;
     text-align: center;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
 
 header h1 {
-    margin-bottom: 15px;
+    margin-bottom: 1rem;
+    font-size: 2rem;
 }
-
 nav ul {
     list-style: none;
+
     padding: 0;
     margin: 0;
 
     display: flex;
     justify-content: center;
-    gap: 20px;
+    align-items: center;
+
+    gap: 1.25rem;
     flex-wrap: wrap;
 }
 
 nav a {
+    display: block;
+
     color: var(--color-blanco);
     text-decoration: none;
     font-weight: bold;
+
+    padding: 0.5rem 0.8rem;
+    border-radius: 6px;
+
+    transition: background-color 0.3s;
 }
 
 nav a:hover {
-    text-decoration: underline;
+    background-color: var(--color-secundario);
 }
+main {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+    padding: 5vh 0;
+}
+
+section {
+    background-color: var(--color-blanco);
+
+    margin-bottom: 2rem;
+    padding: 2rem;
+
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio);
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
 #inicio {
-    margin-bottom: 30px;
+    text-align: center;
 }
 
 #inicio h2 {
-    text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 1.5rem;
 }
-
 .panel-tarjetas {
     display: grid;
+
     grid-template-columns: repeat(3, 1fr);
+
     gap: var(--espaciado);
 }
 
 .panel-tarjetas article {
-    background-color: var(--color-blanco);
+    background-color: var(--color-fondo);
+
     border: 1px solid var(--color-borde);
-    border-radius: 10px;
-    padding: 20px;
+    border-radius: var(--radio);
+
+    padding: 1.5rem;
+
     text-align: center;
+
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
 .panel-tarjetas article h3 {
-    margin-bottom: 10px;
+    margin-bottom: 0.7rem;
 }
 
 .panel-tarjetas article p {
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: bold;
 }
+
+.panel-tarjetas article span {
+    font-size: 0.9rem;
+}
+#control-acceso form {
+    display: flex;
+    flex-direction: column;
+
+    gap: 1rem;
+
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+
+    gap: 0.4rem;
+}
+
+.campo label {
+    font-weight: bold;
+}
+
+.campo input,
+.campo select {
+    width: 100%;
+
+    padding: 0.75rem;
+
+    border: 1px solid var(--color-borde);
+    border-radius: 6px;
+
+    font-size: 1rem;
+}
+
+.campo input:focus,
+.campo select:focus {
+    outline: 2px solid var(--color-acento);
+}
+.contenedor-boton {
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+button {
+    background-color: var(--color-acento);
+    color: var(--color-blanco);
+
+    border: none;
+    border-radius: 6px;
+
+    padding: 0.75rem 2rem;
+
+    font-size: 1rem;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+button:hover {
+    background-color: var(--color-secundario);
+    transform: scale(1.03);
+}
+
+.cobro {
+    margin-top: 2rem;
+
+    padding: 1.5rem;
+
+    background-color: var(--color-fondo);
+
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio);
+
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.cobro h3 {
+    margin-bottom: 0.5rem;
+}
+
+.total {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+#espacios p,
+#abonados p,
+#tarifas p {
+    margin-bottom: 0;
+}
+
+#abonados {
+    min-height: 20vh;
+}
+#tarifas {
+    min-height: 20vh;
+}
+
+footer {
+    background-color: var(--color-principal);
+    color: var(--color-blanco);
+
+    text-align: center;
+
+    padding: 1.5rem 5vw;
+
+    margin-top: 2rem;
+}
+
+
+@media (max-width: 768px) {
+
+    header {
+        padding: 1.5rem 4vw;
+    }
+
+    header h1 {
+        font-size: 1.6rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    main {
+        width: 94%;
+        padding: 3vh 0;
+    }
+
+    section {
+        padding: 1.25rem;
+    }
+
+    /* Las tarjetas pasan de 3 columnas
+       a una sola columna */
+
+    .panel-tarjetas {
+        grid-template-columns: 1fr;
+    }
+
+    #control-acceso form {
+        width: 100%;
+    }
+}
+
+
+/* Celulares pequeños */
+
+@media (max-width: 480px) {
+
+    body {
+        font-size: 0.95rem;
+    }
+
+    header h1 {
+        font-size: 1.4rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    section {
+        padding: 1rem;
+    }
+
+    .panel-tarjetas article {
+        padding: 1rem;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
