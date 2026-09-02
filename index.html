@@ -1,13 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sistema de estacionamiento para gestionar espacios, vehículos, ingresos, egresos y tarifas.">
+    
+    <link rel="stylesheet" href="style.css">
+    
     <title>Sistema de Estacionamiento</title>
 </head>
+
 <body>
+
+    <!-- ENCABEZADO -->
     <header>
         <h1>Sistema de Estacionamiento</h1>
+
         <nav>
             <ul>
                 <li><a href="#inicio">Panel de Control</a></li>
@@ -18,59 +26,166 @@
             </ul>
         </nav>
     </header>
+
+
+    <!-- CONTENIDO PRINCIPAL -->
     <main>
+
+        <!-- PANEL DE CONTROL -->
         <section id="inicio">
+
             <h2>Estado en Tiempo Real</h2>
-            <div>
-                <article>
+
+            <div class="panel-tarjetas">
+
+                <article class="tarjeta">
                     <h3>Espacios Disponibles</h3>
-                    <p>35 / 50</p>
+                    <p class="numero">35 / 50</p>
                 </article>
-                <article>
+
+                <article class="tarjeta">
                     <h3>Vehículos Actuales</h3>
-                    <p>15</p>
+                    <p class="numero">15</p>
                 </article>
-                <article>
+
+                <article class="tarjeta">
                     <h3>Alertas del Sistema</h3>
-                    <p>Capacidad normal (30% de ocupación)</p>
+                    <p>Capacidad normal</p>
+                    <span>30% de ocupación</span>
                 </article>
+
             </div>
+
         </section>
+
+
+        <!-- CONTROL DE ACCESO -->
         <section id="control-acceso">
+
             <h2>Control de Acceso</h2>
+
             <form>
-                <label for="tipo-vehiculo">Tipo de Vehículo:</label>
-                <select id="tipo-vehiculo" name="tipo-vehiculo">
-                    <option value="auto">Auto</option>
-                    <option value="moto">Moto</option>
-                    <option value="camioneta">Camioneta</option>
-                </select>
-                <label for="accion">Acción:</label>
-                <select id="accion" name="accion">
-                    <option value="ingreso">Ingreso</option>
-                    <option value="egreso">Egreso</option>
-                </select>
-                <label for="placa">Placa:</label>
-                <input id="placa" name="placa" type="text" placeholder="AB123CD" />
 
-                <label for="hora-ingreso">Hora de Ingreso:</label>
-                <input id="hora-ingreso" name="hora-ingreso" type="time" />
+                <div class="campo">
+                    <label for="tipo-vehiculo">Tipo de Vehículo:</label>
 
-                <label for="hora-egreso">Hora de Egreso:</label>
-                <input id="hora-egreso" name="hora-egreso" type="time" />
+                    <select id="tipo-vehiculo" name="tipo-vehiculo">
+                        <option value="auto">Auto</option>
+                        <option value="moto">Moto</option>
+                        <option value="camioneta">Camioneta</option>
+                    </select>
+                </div>
 
-                <div style="margin-top:8px">
+
+                <div class="campo">
+                    <label for="accion">Acción:</label>
+
+                    <select id="accion" name="accion">
+                        <option value="ingreso">Ingreso</option>
+                        <option value="egreso">Egreso</option>
+                    </select>
+                </div>
+
+
+                <div class="campo">
+                    <label for="placa">Placa:</label>
+
+                    <input 
+                        id="placa" 
+                        name="placa" 
+                        type="text" 
+                        placeholder="AB123CD"
+                    >
+                </div>
+
+
+                <div class="campo">
+                    <label for="hora-ingreso">Hora de Ingreso:</label>
+
+                    <input 
+                        id="hora-ingreso" 
+                        name="hora-ingreso" 
+                        type="time"
+                    >
+                </div>
+
+
+                <div class="campo">
+                    <label for="hora-egreso">Hora de Egreso:</label>
+
+                    <input 
+                        id="hora-egreso" 
+                        name="hora-egreso" 
+                        type="time"
+                    >
+                </div>
+
+
+                <div class="contenedor-boton">
                     <button type="submit">Registrar</button>
                 </div>
 
-                <div>
-                    <h3>Cobro</h3>
-                    <p>Tarifa por hora (ejemplo): Auto $2500 · Moto $1500 · Camioneta $3000</p>
-                    <p>Total estimado: $--</p>
-                </div>
             </form>
+
+
+            <!-- COBRO -->
+            <div class="cobro">
+
+                <h3>Cobro</h3>
+
+                <p>
+                    Tarifa por hora:
+                    Auto $2500 ·
+                    Moto $1500 ·
+                    Camioneta $3000
+                </p>
+
+                <p class="total">
+                    Total estimado: $--
+                </p>
+
+            </div>
+
         </section>
-        
+
+
+        <!-- ESPACIOS -->
+        <section id="espacios">
+
+            <h2>Espacios y Sectores</h2>
+
+            <p>
+                Gestión de los espacios disponibles y los sectores
+                del estacionamiento.
+            </p>
+
+        </section>
+
+
+        <!-- ABONADOS -->
+        <section id="abonados">
+
+            <h2>Abonados</h2>
+
+            <p>
+                Registro y gestión de clientes abonados
+                del estacionamiento.
+            </p>
+
+        </section>
+
+
+        <!-- TARIFAS -->
+        <section id="tarifas">
+            <h2>Tarifas</h2>
+            <p>
+                Consulta y gestión de las tarifas
+                del estacionamiento.
+            </p>
+
+        </section>
+
     </main>
+
 </body>
 </html>
