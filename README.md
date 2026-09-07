@@ -39,6 +39,25 @@ Se utilizó principalmente para:
 
 Grid permite controlar de manera más sencilla la cantidad de columnas y filas dependiendo del espacio disponible.
 
+### Estrategias de SEO utilizadas
+
+Para que la página esté bien posicionada en los buscadores y sea fácil de navegar, aplicamos estas 5 cosas:
+
+1. **Jerarquía de títulos (H1, H2, H3):** 
+   Pusimos un solo `<h1>` para el nombre del estacionamiento y después ordenamos las secciones con `<h2>` y `<h3>`. Esto sirve para que Google entienda cuál es el tema principal y cómo está organizada la página.
+
+2. **Título de la pestaña y Meta Descripción:** 
+   En el `<head>` agregamos un `<title>` claro y una `<meta name="description">` corta que explica de qué trata el sistema. Su función es que cuando alguien busque en Google, aparezca un texto prolijo resumiendo la página y den ganas de entrar.
+
+3. **Texto alternativo en imágenes (atributo alt):** 
+   Le agregamos el atributo `alt` al logo explicando qué se ve en la imagen. Sirve tanto para accesibilidad (por si alguien usa lector de pantalla o la imagen no carga) como para que Google sepa qué hay en la foto.
+
+4. **Idioma del sitio (`lang="es"`):** 
+   Pusimos `lang="es"` en la etiqueta `<html>`. El objetivo es avisarle a los navegadores y buscadores que la página está en español, para que no salte el cartel de traducir y aparezca en búsquedas de habla hispana.
+
+5. **Etiquetas Open Graph (redes sociales):** 
+   Agregamos las etiquetas `og:title` y `og:description` en el encabezado. Cumplen el objetivo de que si pasamos el link por WhatsApp o cualquier red social, se arme la tarjetita con el título y la descripción en vez de quedar solo el enlace plano.
+
 ## ¿Qué variables CSS creamos?
 
 Creamos variables CSS para reutilizar colores y otros valores del diseño y facilitar futuras modificaciones.
@@ -74,21 +93,3 @@ La distribución de los elementos.
 De esta forma, buscamos que el sistema sea cómodo de utilizar tanto en una computadora como en dispositivos móviles.
 
 
-### Estrategias de SEO utilizadas
-
-Para que la página esté bien posicionada en los buscadores y sea fácil de navegar, aplicamos estas 5 cosas:
-
-1. **Jerarquía de títulos (H1, H2, H3):** 
-   Pusimos un solo `<h1>` para el nombre del estacionamiento y después ordenamos las secciones con `<h2>` y `<h3>`. Esto sirve para que Google entienda cuál es el tema principal y cómo está organizada la página.
-
-2. **Título de la pestaña y Meta Descripción:** 
-   En el `<head>` agregamos un `<title>` claro y una `<meta name="description">` corta que explica de qué trata el sistema. Su función es que cuando alguien busque en Google, aparezca un texto prolijo resumiendo la página y den ganas de entrar.
-
-3. **Texto alternativo en imágenes (atributo alt):** 
-   Le agregamos el atributo `alt` al logo explicando qué se ve en la imagen. Sirve tanto para accesibilidad (por si alguien usa lector de pantalla o la imagen no carga) como para que Google sepa qué hay en la foto.
-
-4. **Idioma del sitio (`lang="es"`):** 
-   Pusimos `lang="es"` en la etiqueta `<html>`. El objetivo es avisarle a los navegadores y buscadores que la página está en español, para que no salte el cartel de traducir y aparezca en búsquedas de habla hispana.
-
-5. **Etiquetas Open Graph (redes sociales):** 
-   Agregamos las etiquetas `og:title` y `og:description` en el encabezado. Cumplen el objetivo de que si pasamos el link por WhatsApp o cualquier red social, se arme la tarjetita con el título y la descripción en vez de quedar solo el enlace plano.
