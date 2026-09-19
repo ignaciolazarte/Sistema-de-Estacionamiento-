@@ -125,13 +125,12 @@
         <section id="control-acceso">
 
             <h2>Control de Acceso</h2>
-
-            <form>
-
+            <div class="card border-0 shadow-sm mx-auto">
+                  <form class="p-4 container-fluid">
                 <div class="campo">
-                    <label for="tipo-vehiculo">Tipo de Vehículo:</label>
+                    <label for="tipo-vehiculo" class="form-label">Tipo de Vehículo:</label>
 
-                    <select id="tipo-vehiculo" name="tipo-vehiculo">
+                    <select id="tipo-vehiculo" name="tipo-vehiculo" class="form-select">
                         <option value="auto">Auto</option>
                         <option value="moto">Moto</option>
                         <option value="camioneta">Camioneta</option>
@@ -140,29 +139,28 @@
 
 
                 <div class="campo">
-                    <label for="accion">Acción:</label>
+                    <label for="accion" class="form-label">Acción:</label>
 
-                    <select id="accion" name="accion">
+                    <select id="accion" name="accion" class="form-select">
                         <option value="ingreso">Ingreso</option>
                         <option value="egreso">Egreso</option>
                     </select>
                 </div>
 
-
                 <div class="campo">
-                    <label for="placa">Placa:</label>
+                    <label for="placa"class="form-label">Placa:</label>
 
                     <input 
                         id="placa" 
                         name="placa" 
                         type="text" 
+                        class="form-control"
                         placeholder="AB123CD"
                     >
                 </div>
 
-
                 <div class="campo">
-                    <label for="hora-ingreso">Hora de Ingreso:</label>
+                    <label for="hora-ingreso" class="form-label">Hora de Ingreso:</label>
 
                     <input 
                         id="hora-ingreso" 
@@ -171,9 +169,8 @@
                     >
                 </div>
 
-
                 <div class="campo">
-                    <label for="hora-egreso">Hora de Egreso:</label>
+                    <label for="hora-egreso" class="form-label">Hora de Egreso:</label>
 
                     <input 
                         id="hora-egreso" 
@@ -182,22 +179,18 @@
                     >
                 </div>
 
-
                 <div class="contenedor-boton">
-                    <button type="submit">Registrar</button>
+                  <button type="submit">Registrar</button>
                 </div>
-
+                </div>
             </form>
 
-
             <!-- COBRO -->
-            <div class="cobro">
+            <div class="cobro mt-4">
 
                 <h3>Cobro</h3>
 
-                
-
-                <p class="total">
+                <p class="total mt-3">
                     Total: $
                 </p>
 

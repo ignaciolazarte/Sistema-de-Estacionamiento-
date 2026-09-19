@@ -102,8 +102,6 @@ section {
 #control-acceso form {
     background-color: #dff2fc;
 
-    padding: 2rem;
-
     border-radius: var(--radio);
     border: 1px solid var(--color-borde);
 
@@ -191,7 +189,7 @@ button:hover {
     box-shadow: 0 6px 14px rgba(33, 150, 210, 0.3);
 }
 .cobro {
-    margin-top: 2rem;
+   /* margin-top: 2rem;*/
     padding: 1.5rem;
 
     background-color: var(--color-blanco);
@@ -215,7 +213,7 @@ button:hover {
 }
 
 .cobro .total {
-    margin-top: 1rem;
+   /* margin-top: 1rem;*/
 
     font-size: 1.2rem;
     font-weight: 600;
