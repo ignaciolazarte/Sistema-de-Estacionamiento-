@@ -9,7 +9,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const espaciosDisponibles = document.querySelector("#espacios-disponibles");
     const vehiculosActuales = document.querySelector("#vehiculos-actuales");
     const totalEstimado = document.querySelector(".total");
-
+    const estadoSistema = document.querySelector("#estado-sistema");
+    const porcentajeOcupacion = document.querySelector("#porcentaje-ocupacion");
+    const estadoIndicador = document.querySelector("#estado-indicador"); 
     let espacios = 35;
     let vehiculos = 15;
 
@@ -23,6 +25,25 @@ document.addEventListener("DOMContentLoaded", () => {
         moto: 1500,
         camioneta: 3000
     };
+   function actualizarEstado() {
+    const porcentaje = Math.round((vehiculos / capacidadTotal) * 100);
+
+    const textoEstado = document.getElementById("texto-estado");
+    const porcentajeOcupacion = document.getElementById("porcentaje-ocupacion");
+    const indicador = document.getElementById("estado-indicador");
+
+    porcentajeOcupacion.textContent = `${porcentaje}% de ocupación`;
+
+    if (porcentaje <= 50) {
+        textoEstado.textContent = "Capacidad normal";
+    } 
+    else if (porcentaje <= 80) {
+        textoEstado.textContent = "Capacidad media";
+    } 
+    else {
+        textoEstado.textContent = "Capacidad alta";
+    }
+}
 
     formulario.addEventListener("submit", (evento) => {
 
@@ -112,9 +133,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Actualizamos los datos en pantalla
         espaciosDisponibles.textContent = `${espacios} / ${capacidadTotal}`;
-        vehiculosActuales.textContent = vehiculos;
+                  vehiculosActuales.textContent = vehiculos;
 
-        formulario.reset();
+                 actualizarEstado();
+
+                   formulario.reset();
     });
 
 
