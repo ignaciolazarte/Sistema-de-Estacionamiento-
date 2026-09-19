@@ -5,98 +5,115 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Sistema de estacionamiento para gestionar espacios, vehículos, ingresos, egresos y tarifas.">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    
     <title>Sistema de Estacionamiento</title>
 </head>
 
 <body>
     <header>
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="#inicio">
-                Sistema de Estacionamiento
-            </a>
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="#inicio">
+                    Sistema de Estacionamiento
+                </a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarEstacionamiento"
-                    aria-controls="navbarEstacionamiento"
-                    aria-expanded="false"
-                    aria-label="Mostrar navegación">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarEstacionamiento"
+                        aria-controls="navbarEstacionamiento"
+                        aria-expanded="false"
+                        aria-label="Mostrar navegación">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-            <div class="collapse navbar-collapse" id="navbarEstacionamiento">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#inicio">Panel de Control</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#control-acceso">Ingreso / Egreso</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#espacios">Espacios y Sectores</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#abonados">Abonados</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#tarifas">Tarifas</a>
-                    </li>
-                </ul>
+                <div class="collapse navbar-collapse" id="navbarEstacionamiento">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#inicio">Panel de Control</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#control-acceso">Control de Acceso</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#espacios">Espacios y Sectores</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#abonados">Abonados</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#tarifas">Tarifas</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
-</header>
+        </nav>
+    </header>
+
     <main>
-<section id="inicio" class="container py-5">
-    <h2 class="text-center mb-4">Estado en Tiempo Real</h2>
+        <!-- PANEL DE CONTROL -->
+        <section id="inicio" class="container py-5">
+            <div class="dashboard-header mb-4">
+                <span class="dashboard-etiqueta">PANEL DE CONTROL</span>
+                <h2>Estado del Estacionamiento</h2>
+                <p>Información actualizada sobre la disponibilidad y ocupación.</p>
+            </div>
 
-    <div class="row g-4">
-
-        <div class="col-12 col-md-4">
-            <article class="card h-100 shadow-sm text-center p-3">
-                <div class="card-body">
-                    <h3 class="card-title h5">Espacios Disponibles</h3>
-                    <p id="espacios-disponibles" class="display-6 fw-bold mb-0">35 / 50</p>
+            <div class="row g-4">
+                <!-- Tarjeta 1: Espacios Disponibles -->
+                <div class="col-12 col-md-4">
+                    <article class="dashboard-card h-100">
+                        <div class="dashboard-icon">
+                            <i class="bi bi-p-square-fill"></i>
+                        </div>
+                        <div class="dashboard-content">
+                            <span class="dashboard-label">ESPACIOS DISPONIBLES</span>
+                            <p id="espacios-disponibles" class="dashboard-number">50 / 50</p>
+                            <small>Espacios libres actualmente</small>
+                        </div>
+                    </article>
                 </div>
-            </article>
-        </div>
 
-        <div class="col-12 col-md-4">
-            <article class="card h-100 shadow-sm text-center p-3">
-                <div class="card-body">
-                    <h3 class="card-title h5">Vehículos Actuales</h3>
-                    <p id="vehiculos-actuales" class="display-6 fw-bold mb-0">15</p>
-            </article>
-        </div>
-
-        <div class="col-12 col-md-4">
-            <article class="card h-100 shadow-sm text-center p-3">
-                <div class="card-body">
-                    <h3 class="card-title h5">Alertas del Sistema</h3>
-                    <p class="fw-bold mb-1">Capacidad normal</p>
-                    <small>30% de ocupación</small>
+                <!-- Tarjeta 2: Vehículos Actuales -->
+                <div class="col-12 col-md-4">
+                    <article class="dashboard-card h-100">
+                        <div class="dashboard-icon">
+                            <i class="bi bi-car-front-fill"></i>
+                        </div>
+                        <div class="dashboard-content">
+                            <span class="dashboard-label">VEHÍCULOS ACTUALES</span>
+                            <p id="vehiculos-actuales" class="dashboard-number">0</p>
+                            <small>Vehículos dentro del estacionamiento</small>
+                        </div>
+                    </article>
                 </div>
-            </article>
-        </div>
 
-    </div>
-</section>
+                <!-- Tarjeta 3: Estado del Sistema -->
+                <div class="col-12 col-md-4">
+                    <article class="dashboard-card dashboard-card-estado h-100">
+                        <div class="dashboard-icon">
+                            <i class="bi bi-percent"></i>
+                        </div>
+                        <div class="dashboard-content">
+                            <span class="dashboard-label">ESTADO DEL SISTEMA</span>
+                            <p id="estado-sistema" class="estado-texto">
+                                <span id="estado-indicador" class="estado-indicador"></span>
+                                <span id="texto-estado">Capacidad normal</span>
+                            </p>
+                            <small id="porcentaje-ocupacion">0% de ocupación</small>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
 
-        <section id="control-acceso">
-
+        <!-- CONTROL DE ACCESO -->
+        <section id="control-acceso" class="container py-5">
             <h2>Control de Acceso</h2>
-
             <form>
-
                 <div class="campo">
                     <label for="tipo-vehiculo">Tipo de Vehículo:</label>
-
                     <select id="tipo-vehiculo" name="tipo-vehiculo">
                         <option value="auto">Auto</option>
                         <option value="moto">Moto</option>
@@ -104,120 +121,205 @@
                     </select>
                 </div>
 
-
                 <div class="campo">
                     <label for="accion">Acción:</label>
-
                     <select id="accion" name="accion">
                         <option value="ingreso">Ingreso</option>
                         <option value="egreso">Egreso</option>
                     </select>
                 </div>
 
-
                 <div class="campo">
                     <label for="placa">Placa:</label>
-
-                    <input 
-                        id="placa" 
-                        name="placa" 
-                        type="text" 
-                        placeholder="AB123CD"
-                    >
+                    <input id="placa" name="placa" type="text" placeholder="AB123CD">
                 </div>
-
 
                 <div class="campo">
                     <label for="hora-ingreso">Hora de Ingreso:</label>
-
-                    <input 
-                        id="hora-ingreso" 
-                        name="hora-ingreso" 
-                        type="time"
-                    >
+                    <input id="hora-ingreso" name="hora-ingreso" type="time">
                 </div>
-
 
                 <div class="campo">
                     <label for="hora-egreso">Hora de Egreso:</label>
-
-                    <input 
-                        id="hora-egreso" 
-                        name="hora-egreso" 
-                        type="time"
-                    >
+                    <input id="hora-egreso" name="hora-egreso" type="time">
                 </div>
-
 
                 <div class="contenedor-boton">
                     <button type="submit">Registrar</button>
                 </div>
-
             </form>
 
-
             <!-- COBRO -->
-            <div class="cobro">
-
+            <div class="cobro mt-4">
                 <h3>Cobro</h3>
+                <p class="total">Total: $</p>
+            </div>
+        </section>
 
-                <p>
-                    Tarifa por hora:
-                    Auto $2500 ·
-                    Moto $1500 ·
-                    Camioneta $3000
-                </p>
+        <!-- ESPACIOS Y SECTORES -->
+        <section id="espacios" class="container py-5">
+            <div class="card shadow-sm border-0">
+                <div class="card-body text-center p-4">
+                    <h2 class="card-title mb-3">Espacios y Sectores</h2>
+                    <p class="card-text mb-0 text-muted">
+                        Gestión de los espacios disponibles y los sectores del estacionamiento.
+                    </p>
+                </div>
+            </div>
+        </section>
 
-                <p class="total">
-                    Total estimado: $--
-                </p>
-
+        <!-- ABONADOS (ESTRUCTURA INTEGRADA) -->
+        <section id="abonados" class="container py-5">
+            <div class="dashboard-header mb-4">
+                <span class="dashboard-etiqueta">GESTIÓN DE CLIENTES</span>
+                <h2>Abonados</h2>
+                <p>Registro y control de vehículos con abono mensual o por estadía fija.</p>
             </div>
 
+            <div class="row g-4">
+                <!-- Formulario de nuevo abonado -->
+                <div class="col-12 col-lg-5">
+                    <div class="card border-0 shadow-sm p-4 h-100">
+                        <h4 class="mb-3 text-primary"><i class="bi bi-person-plus-fill me-2"></i>Nuevo Abonado</h4>
+                        <form id="form-abonado">
+                            <div class="mb-3">
+                                <label for="nombre-abonado" class="form-label fw-semibold">Nombre y Apellido</label>
+                                <input type="text" class="form-control" id="nombre-abonado" placeholder="Ej: Juan Pérez" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="placa-abonado" class="form-label fw-semibold">Placa / Patente</label>
+                                <input type="text" class="form-control" id="placa-abonado" placeholder="Ej: AB123CD" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="tipo-abono" class="form-label fw-semibold">Tipo de Plan</label>
+                                <select class="form-select" id="tipo-abono">
+                                    <option value="Mensual Completo">Mensual Completo</option>
+                                    <option value="Turno Nocturno">Turno Nocturno</option>
+                                    <option value="Turno Diurno">Turno Diurno</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100 py-2 fw-bold">Registrar Abonado</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Tabla de abonados activos -->
+                <div class="col-12 col-lg-7">
+                    <div class="card border-0 shadow-sm p-4 h-100">
+                        <h4 class="mb-3 text-primary"><i class="bi bi-list-check me-2"></i>Abonados Activos</h4>
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Placa</th>
+                                        <th>Plan</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tabla-abonados">
+                                    <!-- Los datos se cargan dinámicamente con JavaScript -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
-<section id="espacios" class="container py-5">
-    <div class="card shadow-sm">
-        <div class="card-body text-center">
-            <h2 class="card-title mb-3">Espacios y Sectores</h2>
-            <p class="card-text mb-0">
-                Gestión de los espacios disponibles y los sectores del estacionamiento.
-            </p>
-        </div>
-    </div>
-</section>
-
-        <!-- ABONADOS -->
-        <section id="abonados">
-
-            <h2>Abonados</h2>
-
-            <p>
-                Registro y gestión de clientes abonados
-                del estacionamiento.
-            </p>
-
-        </section>
-
-
         <!-- TARIFAS -->
-        <section id="tarifas">
-            <h2>Tarifas</h2>
-            <p>
-                Consulta y gestión de las tarifas
-                del estacionamiento.
-            </p>
+        <section id="tarifas" class="container py-5">
+            <div class="dashboard-header mb-4">
+                <span class="dashboard-etiqueta">CONFIGURACIÓN DE PRECIOS</span>
+                <h2>Tarifas por Hora</h2>
+                <p>Consulta y actualización de las tarifas vigentes del estacionamiento.</p>
+            </div>
 
+            <div class="row g-4">
+                <div class="col-12 col-lg-7">
+                    <div class="row g-3">
+                        <div class="col-12 col-md-4">
+                            <div class="card border-0 shadow-sm p-3 text-center h-100">
+                                <div class="text-primary fs-2 mb-2"><i class="bi bi-car-front-fill"></i></div>
+                                <h5 class="text-muted">Auto</h5>
+                                <h3 class="fw-bold text-dark" id="tarifa-auto-display">$2500</h3>
+                                <small class="text-muted">por hora</small>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <div class="card border-0 shadow-sm p-3 text-center h-100">
+                                <div class="text-primary fs-2 mb-2"><i class="bi bi-bicycle"></i></div>
+                                <h5 class="text-muted">Moto</h5>
+                                <h3 class="fw-bold text-dark" id="tarifa-moto-display">$1500</h3>
+                                <small class="text-muted">por hora</small>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <div class="card border-0 shadow-sm p-3 text-center h-100">
+                                <div class="text-primary fs-2 mb-2"><i class="bi bi-truck-front-fill"></i></div>
+                                <h5 class="text-muted">Camioneta</h5>
+                                <h3 class="fw-bold text-dark" id="tarifa-camioneta-display">$3000</h3>
+                                <small class="text-muted">por hora</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="col-12 col-lg-5">
+                    <div class="card border-0 shadow-sm p-4 h-100">
+                        <h4 class="mb-3 text-primary"><i class="bi bi-pencil-square me-2"></i>Modificar Tarifa</h4>
+                        <form id="form-tarifa">
+                            <div class="mb-3">
+                                <label for="select-vehiculo-tarifa" class="form-label fw-semibold">Vehículo</label>
+                                <select class="form-select" id="select-vehiculo-tarifa">
+                                    <option value="auto">Auto</option>
+                                    <option value="moto">Moto</option>
+                                    <option value="camioneta">Camioneta</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="nuevo-precio" class="form-label fw-semibold">Nuevo Precio por Hora ($)</label>
+                                <input type="number" class="form-control" id="nuevo-precio" placeholder="Ej: 2800" required min="0">
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100 py-2 fw-bold">Actualizar Tarifa</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </section>
+    <footer class="bg-dark text-white py-4 mt-5 border-top border-secondary">
+        <div class="container">
+            <div class="row align-items-center justify-content-between g-3">
+                
+                <div class="col-12 col-md-6 text-center text-md-start">
+                    <p class="mb-1 text-light small">&copy; 2026 Sistema de Estacionamiento.</p>
+                    <span class="text-secondary text-uppercase fw-bold" style="font-size: 0.75rem; letter-spacing: 1px;">Desarrollado por</span>
+                    
+                    <!-- Ignacio Lazarte -->
+                    <div class="d-flex align-items-center justify-content-center justify-content-md-start gap-2 mt-1">
+                        <span class="fw-semibold small">IGNACIO LAZARTE</span>
+                        <a href="https://github.com/ignaciolazarte" target="_blank" class="text-secondary text-decoration-none hover-icon"><i class="bi bi-github"></i></a>
+                    </div>
 
-    </main>
-    <footer class="bg-dark text-white text-center py-4 mt-5">
-    <div class="container">
-        <p class="mb-0">
-            Sistema de Estacionamiento - Gestión de vehículos y espacios
-        </p>
-    </div>
-</footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="script.js"></script>
+                    <!-- Lucia Cordoba -->
+                    <div class="d-flex align-items-center justify-content-center justify-content-md-start gap-2 mt-1">
+                        <span class="fw-semibold small">LUCIA CORDOBA</span>
+                        <a href="https://github.com/luciaacordoba17" target="_blank" class="text-secondary text-decoration-none hover-icon"><i class="bi bi-github"></i></a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 text-center text-md-end">
+                    <div class="d-inline-flex bg-black bg-opacity-25 p-2 rounded-pill border border-secondary gap-3 px-3">
+                        <a href="#" class="text-light fs-5 text-decoration-none"><i class="bi bi-whatsapp"></i></a>
+                        <span class="text-secondary">|</span>
+                        <a href="#" class="text-light fs-5 text-decoration-none"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
