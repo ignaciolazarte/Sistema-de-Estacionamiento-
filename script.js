@@ -9,6 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const espaciosDisponibles = document.getElementById("espacios-disponibles");
     const vehiculosActuales = document.getElementById("vehiculos-actuales");
+    const espaciosDisponiblesSectores = document.getElementById("espacios-disponibles-sectores");
+    const espaciosOcupadosSectores = document.getElementById("espacios-ocupados");
     const totalEstimado = document.querySelector(".total");
     const textoEstado = document.getElementById("texto-estado");
     const porcentajeOcupacion = document.getElementById("porcentaje-ocupacion");
@@ -25,6 +27,14 @@ document.addEventListener("DOMContentLoaded", () => {
     let vehiculos = 0;
     const vehiculosDentro = {};
 
+    function actualizarEspaciosSectores() {
+        console.log("Actualizando espacios:", espacios, vehiculos);
+
+        if (!espaciosDisponiblesSectores || !espaciosOcupadosSectores) return;
+
+        espaciosDisponiblesSectores.textContent = espacios;
+        espaciosOcupadosSectores.textContent = vehiculos;
+    }
     // Arreglo inicial de abonados con un dato de ejemplo
     let listaAbonados = [
         { nombre: "Carlos Gómez", placa: "AC456XY", plan: "Mensual Completo" }
@@ -40,6 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
         espaciosDisponibles.textContent = `${espacios} / ${CAPACIDAD_TOTAL}`;
         vehiculosActuales.textContent = vehiculos;
         actualizarEstado();
+        actualizarEspaciosSectores();
         renderizarAbonados();
     }
 
@@ -129,6 +140,7 @@ document.addEventListener("DOMContentLoaded", () => {
             espaciosDisponibles.textContent = `${espacios} / ${CAPACIDAD_TOTAL}`;
             vehiculosActuales.textContent = vehiculos;
             actualizarEstado();
+            actualizarEspaciosSectores();
             formulario.reset();
         });
     }
@@ -175,7 +187,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Función global para eliminar abonados desde la tabla
-    window.eliminarAbonado = function(index) {
+    window.eliminarAbonado = function (index) {
         listaAbonados.splice(index, 1);
         renderizarAbonados();
     };
@@ -184,39 +196,39 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Referencias de la sección de Tarifas
-    const formTarifa = document.getElementById("form-tarifa");
-    const selectVehiculoTarifa = document.getElementById("select-vehiculo-tarifa");
-    const nuevoPrecioInput = document.getElementById("nuevo-precio");
+const formTarifa = document.getElementById("form-tarifa");
+const selectVehiculoTarifa = document.getElementById("select-vehiculo-tarifa");
+const nuevoPrecioInput = document.getElementById("nuevo-precio");
 
-    const displayAuto = document.getElementById("tarifa-auto-display");
-    const displayMoto = document.getElementById("tarifa-moto-display");
-    const displayCamioneta = document.getElementById("tarifa-camioneta-display");
+const displayAuto = document.getElementById("tarifa-auto-display");
+const displayMoto = document.getElementById("tarifa-moto-display");
+const displayCamioneta = document.getElementById("tarifa-camioneta-display");
 
-    function actualizarDisplaysTarifas() {
-        displayAuto.textContent = `$${tarifas.auto}`;
-        displayMoto.textContent = `$${tarifas.moto}`;
-        displayCamioneta.textContent = `$${tarifas.camioneta}`;
-    }
+function actualizarDisplaysTarifas() {
+    displayAuto.textContent = `$${tarifas.auto}`;
+    displayMoto.textContent = `$${tarifas.moto}`;
+    displayCamioneta.textContent = `$${tarifas.camioneta}`;
+}
 
-    if (formTarifa) {
-        formTarifa.addEventListener("submit", (e) => {
-            e.preventDefault();
-            const vehiculoSeleccionado = selectVehiculoTarifa.value;
-            const precioVal = parseFloat(nuevoPrecioInput.value);
+if (formTarifa) {
+    formTarifa.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const vehiculoSeleccionado = selectVehiculoTarifa.value;
+        const precioVal = parseFloat(nuevoPrecioInput.value);
 
-            if (isNaN(precioVal) || precioVal < 0) {
-                alert("Por favor, ingrese un precio válido.");
-                return;
-            }
+        if (isNaN(precioVal) || precioVal < 0) {
+            alert("Por favor, ingrese un precio válido.");
+            return;
+        }
 
-            // Actualiza el objeto de tarifas global que usa el control de acceso
-            tarifas[vehiculoSeleccionado] = precioVal;
-            actualizarDisplaysTarifas();
-            
-            formTarifa.reset();
-            alert(`Tarifa de ${vehiculoSeleccionado} actualizada exitosamente a $${precioVal}.`);
-        });
-    }
+        // Actualiza el objeto de tarifas global que usa el control de acceso
+        tarifas[vehiculoSeleccionado] = precioVal;
+        actualizarDisplaysTarifas();
 
-    // Asegúrate de llamarlo al iniciar
-    actualizarDisplaysTarifas();
+        formTarifa.reset();
+        alert(`Tarifa de ${vehiculoSeleccionado} actualizada exitosamente a $${precioVal}.`);
+    });
+}
+
+// Asegúrate de llamarlo al iniciar
+actualizarDisplaysTarifas();
