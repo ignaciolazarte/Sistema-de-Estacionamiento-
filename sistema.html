@@ -158,15 +158,68 @@
 
         <!-- ESPACIOS Y SECTORES -->
         <section id="espacios" class="container py-5">
-            <div class="card shadow-sm border-0">
-                <div class="card-body text-center p-4">
-                    <h2 class="card-title mb-3">Espacios y Sectores</h2>
-                    <p class="card-text mb-0 text-muted">
-                        Gestión de los espacios disponibles y los sectores del estacionamiento.
-                    </p>
+    <div class="card border-0 shadow-sm">
+        <div class="card-body p-4">
+            <div class="text-center mb-4">
+               <h2 class="card-title mb-2 titulo-espacios" style="color: #16419e !important;">
+    Espacios y Sectores
+</h2>
+                <p class="card-text text-muted mb-0">
+                    Gestión de los espacios disponibles y los sectores del estacionamiento.
+                </p>
+            </div>
+
+            <div class="row g-4">
+              <div class="col-md-6">
+    <div class="card h-100 border-0 shadow-sm tarjeta-espacio">
+        <div class="card-body">
+            <h3 class="h5 mb-3">Sectores</h3>
+
+            <div class="row g-3">
+                <div class="col-6">
+                    <div class="border rounded p-3 text-center">
+                        <i class="bi bi-p-square fs-3"></i>
+                        <h4 class="h6 mt-2 mb-1">Sector A</h4>
+                        <span class="badge text-bg-success">Disponible</span>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="border rounded p-3 text-center">
+                        <i class="bi bi-p-square fs-3"></i>
+                        <h4 class="h6 mt-2 mb-1">Sector B</h4>
+                        <span class="badge text-bg-success">Disponible</span>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </div>
+</div>
+
+                <div class="col-md-6">
+    <div class="card h-100 border-0 shadow-sm tarjeta-espacio">
+        <div class="card-body">
+            <h3 class="h5 mb-3">Espacios disponibles</h3>
+
+            <div class="d-flex justify-content-between align-items-center border rounded p-3 mb-3">
+                <div>
+                    <i class="bi bi-car-front fs-3"></i>
+                    <span class="ms-2">Espacios ocupados</span>
+                </div>
+                <span class="badge text-bg-danger">0</span>
+            </div>
+
+            <div class="d-flex justify-content-between align-items-center border rounded p-3">
+                <div>
+                    <i class="bi bi-p-square fs-3"></i>
+                    <span class="ms-2">Espacios disponibles</span>
+                </div>
+                <span class="badge text-bg-success">50</span>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
 
         <!-- ABONADOS (ESTRUCTURA INTEGRADA) -->
         <section id="abonados" class="container py-5">
