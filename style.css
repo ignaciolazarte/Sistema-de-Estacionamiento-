@@ -301,3 +301,25 @@ body.pagina-animada {
         .card {
             backdrop-filter: blur(2px);
         }
+        /* Tarjetas de Espacios y Sectores */
+        .tarjeta-espacio {
+         border-radius: 12px;
+         transition: transform 0.2s ease, box-shadow 0.2s ease;
+       }
+
+        .tarjeta-espacio:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 15px rgba(37, 99, 235, 0.12) !important;
+       }
+
+     .tarjeta-espacio h3 {
+      color: var(--principal);
+    }
+
+    .tarjeta-espacio .border {
+    background-color: #f0f9ff;
+    }
+
+     .tarjeta-espacio i {
+     color: var(--acento);
+      }
