@@ -53,23 +53,23 @@
 
     <main>
         <!-- PANEL DE CONTROL -->
-        <section id="inicio" class="container py-5">
+        <section id="inicio" class="container py-5 mb-4">
             <div class="dashboard-header mb-4">
                 <span class="dashboard-etiqueta">PANEL DE CONTROL</span>
-                <h2>Estado del Estacionamiento</h2>
+                <h2 class="mb-2">Estado del Estacionamiento</h2>
                 <p>Información actualizada sobre la disponibilidad y ocupación.</p>
             </div>
 
             <div class="row g-4">
                 <!-- Tarjeta 1: Espacios Disponibles -->
                 <div class="col-12 col-md-4">
-                    <article class="dashboard-card h-100">
-                        <div class="dashboard-icon">
+                    <article class="dashboard-card d-flex align-items-center gap-3 p-4 h-100">
+                        <div class="dashboard-icon d-flex align-items-center justify-content-center">
                             <i class="bi bi-p-square-fill"></i>
                         </div>
                         <div class="dashboard-content">
                             <span class="dashboard-label">ESPACIOS DISPONIBLES</span>
-                            <p id="espacios-disponibles" class="dashboard-number">50 / 50</p>
+                            <p id="espacios-disponibles" class="dashboard-number my-1 fw-bold">50 / 50</p>
                             <small>Espacios libres actualmente</small>
                         </div>
                     </article>
@@ -77,28 +77,27 @@
 
                 <!-- Tarjeta 2: Vehículos Actuales -->
                 <div class="col-12 col-md-4">
-                    <article class="dashboard-card h-100">
-                        <div class="dashboard-icon">
+                    <article class="dashboard-card d-flex align-items-center gap-3 p-4 h-100">
+                        <div class="dashboard-icon d-flex align-items-center justify-content-center">
                             <i class="bi bi-car-front-fill"></i>
                         </div>
                         <div class="dashboard-content">
                             <span class="dashboard-label">VEHÍCULOS ACTUALES</span>
-                            <p id="vehiculos-actuales" class="dashboard-number">0</p>
-                            <small>Vehículos dentro del estacionamiento</small>
+                            <p id="vehiculos-actuales" class="dashboard-number my-1 fw-bold">0</p>
                         </div>
                     </article>
                 </div>
 
                 <!-- Tarjeta 3: Estado del Sistema -->
                 <div class="col-12 col-md-4">
-                    <article class="dashboard-card dashboard-card-estado h-100">
-                        <div class="dashboard-icon">
+                    <article class="dashboard-card dashboard-card-estado d-flex align-items-center gap-3 p-4 h-100">
+                        <div class="dashboard-icon d-flex align-items-center justify-content-center">
                             <i class="bi bi-percent"></i>
                         </div>
                         <div class="dashboard-content">
                             <span class="dashboard-label">ESTADO DEL SISTEMA</span>
-                            <p id="estado-sistema" class="estado-texto">
-                                <span id="estado-indicador" class="estado-indicador"></span>
+                            <p id="estado-sistema" class="estado-texto d-flex align-items-center gap-2 fw-semibold">
+                                <span id="estado-indicador" class="estado-indicador d-inline-block"></span>
                                 <span id="texto-estado">Capacidad normal</span>
                             </p>
                             <small id="porcentaje-ocupacion">0% de ocupación</small>
@@ -109,43 +108,42 @@
         </section>
 
         <!-- CONTROL DE ACCESO -->
-        <section id="control-acceso" class="container py-5">
+        <section id="control-acceso" class="container py-5 mb-4">
             <h2>Control de Acceso</h2>
-            <form>
-                <div class="campo">
-                    <label for="tipo-vehiculo">Tipo de Vehículo:</label>
-                    <select id="tipo-vehiculo" name="tipo-vehiculo">
+            <form class="row g-4">
+                <div class="campo col-12 col-md-6">
+                    <label for="tipo-vehiculo" class="form-label fw-semibold">Tipo de Vehículo:</label>
+                    <select id="tipo-vehiculo" name="tipo-vehiculo" class="form-select">
                         <option value="auto">Auto</option>
                         <option value="moto">Moto</option>
                         <option value="camioneta">Camioneta</option>
                     </select>
                 </div>
 
-                <div class="campo">
-                    <label for="accion">Acción:</label>
-                    <select id="accion" name="accion">
+                <div class="campo col-12 col-md-6">
+                    <label for="accion" class="form-label fw-semibold">Acción:</label>
+                    <select id="accion" name="accion" class="form-select">
                         <option value="ingreso">Ingreso</option>
                         <option value="egreso">Egreso</option>
                     </select>
                 </div>
 
-                <div class="campo">
-                    <label for="placa">Placa:</label>
-                    <input id="placa" name="placa" type="text" placeholder="AB123CD">
+                <div class="campo col-12 col-md-6">
+                    <label for="placa" class="form-label fw-semibold">Placa:</label>
+                    <input id="placa" name="placa" type="text" class="form-control" placeholder="AB123CD">
                 </div>
 
-                <div class="campo">
-                    <label for="hora-ingreso">Hora de Ingreso:</label>
-                    <input id="hora-ingreso" name="hora-ingreso" type="time">
+                <div class="campo col-12 col-md-6">
+                    <label for="hora-ingreso" class="form-label fw-semibold">Hora de Ingreso:</label>
+                    <input id="hora-ingreso" name="hora-ingreso" type="time" class="form-control">
                 </div>
 
-                <div class="campo">
-                    <label for="hora-egreso">Hora de Egreso:</label>
-                    <input id="hora-egreso" name="hora-egreso" type="time">
+                <div class="campo col-12 col-md-6">
+                    <label for="hora-egreso" class="form-label fw-semibold">Hora de Egreso:</label>
+                    <input id="hora-egreso" name="hora-egreso" type="time" class="form-control">
                 </div>
-
-                <div class="contenedor-boton">
-                    <button type="submit">Registrar</button>
+                <div class="col-12 text-center">
+                    <button type="submit" class="btn btn-primary px-5 fw-bold">Registrar</button>
                 </div>
             </form>
 
@@ -157,7 +155,7 @@
         </section>
 
         <!-- ESPACIOS Y SECTORES -->
-        <section id="espacios" class="container py-5">
+        <section id="espacios" class="container py-5 mb-4">
             <div class="card border-0 shadow-sm">
                 <div class="card-body p-4">
                     <div class="text-center mb-4">
@@ -207,7 +205,7 @@
                                             <i class="bi bi-car-front fs-3"></i>
                                             <span class="ms-2">Espacios ocupados</span>
                                         </div>
-                                        <span  id="espacios-ocupados" class="badge text-bg-danger">0</span>
+                                        <span id="espacios-ocupados" class="badge text-bg-danger">0</span>
                                     </div>
 
                                     <div class="d-flex justify-content-between align-items-center border rounded p-3">
@@ -223,7 +221,7 @@
         </section>
 
         <!-- ABONADOS (ESTRUCTURA INTEGRADA) -->
-        <section id="abonados" class="container py-5">
+        <section id="abonados" class="container py-5 mb-4">
             <div class="dashboard-header mb-4">
                 <span class="dashboard-etiqueta">GESTIÓN DE CLIENTES</span>
                 <h2>Abonados</h2>
@@ -283,7 +281,7 @@
             </div>
         </section>
         <!-- TARIFAS -->
-        <section id="tarifas" class="container py-5">
+        <section id="tarifas" class="container py-5 mb-4">
             <div class="dashboard-header mb-4">
                 <span class="dashboard-etiqueta">CONFIGURACIÓN DE PRECIOS</span>
                 <h2>Tarifas por Hora</h2>
